@@ -1,6 +1,9 @@
 # 環境変数ファイル（機密情報を含むため）
 .env
 
+# 一時的なドキュメントファイル
+GITHUB_PUSH.md
+
 # Python
 __pycache__/
 *.py[cod]
