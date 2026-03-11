@@ -23,9 +23,9 @@ LINE_CHANNEL_SECRET = os.getenv("LINE_CHANNEL_SECRET")
 DIFY_API_KEY = os.getenv("DIFY_API_KEY")
 DIFY_API_BASE_URL = os.getenv("DIFY_API_BASE_URL", "https://api.dify.ai/v1")
 
-# 環境変数の検証（DIFY_APP_IDは不要）
+# 環境変数の検証（未設定の場合はログに警告のみ）
 if not all([LINE_CHANNEL_ACCESS_TOKEN, LINE_CHANNEL_SECRET, DIFY_API_KEY]):
-    raise ValueError("必要な環境変数が設定されていません。.envファイルを確認してください。")
+    logger.warning("必要な環境変数が設定されていません。Vercelダッシュボードで環境変数を設定してください。")
 
 # デバッグ用：トークンの状態を確認（最初の20文字のみ表示）
 logger.info("=" * 50)
